@@ -6,6 +6,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
+    /* ---------- Theme Tokens ---------- */
+    :root{
+      --bg: #fafafa;
+      --card: #ffffff;
+      --text: #222222;
+      --muted: #666666;
+      --border: #dddddd;
+      --accent: #555555;
+
+      --tag-active: #d9f7be;
+      --tag-waiting: #ffd666;
+      --tag-someday: #d6d6d6;
+      --tag-done: #b7eb8f;
+
+      --code-bg: #111111;
+      --code-text: #f5f5f5;
+    }
+
+    /* Auto dark mode if system prefers dark */
+    @media (prefers-color-scheme: dark) {
+      :root{
+        --bg: #0b0d10;
+        --card: #11151b;
+        --text: #e8e8e8;
+        --muted: #a6a6a6;
+        --border: #242b36;
+        --accent: #9aa4b2;
+
+        --tag-active: #214d2a;
+        --tag-waiting: #5a4206;
+        --tag-someday: #2a2f39;
+        --tag-done: #1f5a36;
+
+        --code-bg: #07090c;
+        --code-text: #e8e8e8;
+      }
+    }
+
+    /* Manual override via data-theme attribute */
+    html[data-theme="light"]{
+      --bg: #fafafa; --card:#fff; --text:#222; --muted:#666; --border:#ddd; --accent:#555;
+      --tag-active:#d9f7be; --tag-waiting:#ffd666; --tag-someday:#d6d6d6; --tag-done:#b7eb8f;
+      --code-bg:#111; --code-text:#f5f5f5;
+    }
+    html[data-theme="dark"]{
+      --bg:#0b0d10; --card:#11151b; --text:#e8e8e8; --muted:#a6a6a6; --border:#242b36; --accent:#9aa4b2;
+      --tag-active:#214d2a; --tag-waiting:#5a4206; --tag-someday:#2a2f39; --tag-done:#1f5a36;
+      --code-bg:#07090c; --code-text:#e8e8e8;
+    }
+
     /* ---------- Base Styling ---------- */
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -13,112 +63,123 @@
       margin: 2rem auto;
       max-width: 900px;
       padding: 0 1.2rem;
-      color: #222;
-      background: #fafafa;
+      color: var(--text);
+      background: var(--bg);
     }
 
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.3rem;
-    }
+    h1 { font-size: 2.2rem; margin-bottom: 0.3rem; }
+    h2 { margin-top: 3rem; font-size: 1.6rem; border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; }
+    h3 { margin-top: 1.5rem; font-size: 1.2rem; }
 
-    h2 {
-      margin-top: 3rem;
-      font-size: 1.6rem;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.3rem;
-    }
+    a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+    a:hover { opacity: 0.85; }
 
-    h3 {
-      margin-top: 1.5rem;
-      font-size: 1.2rem;
-    }
-
-    .section {
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-    }
-
-    ul {
-      margin-left: 1.2rem;
-    }
-
-    .meta {
-      font-size: 0.9rem;
-      color: #666;
-    }
+    ul { margin-left: 1.2rem; }
+    .meta { font-size: 0.9rem; color: var(--muted); }
 
     .card {
-      background: #fff;
+      background: var(--card);
       padding: 1rem 1.3rem;
-      border: 1px solid #ddd;
-      border-radius: 6px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
       margin-bottom: 1.4rem;
     }
 
     .log-entry {
-      border-left: 3px solid #555;
-      padding-left: 1rem;
-      margin-bottom: 1.5rem;
-      background: #fff;
-      padding: 1rem;
+      border-left: 3px solid var(--accent);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      margin-bottom: 1rem;
     }
 
-    .tag {
-      font-weight: bold;
-    }
+    .tag { font-weight: bold; }
 
-    /* Task status tags */
     .status {
       font-size: 0.85rem;
-      padding: 2px 6px;
-      border-radius: 4px;
-      background: #eee;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--tag-someday);
       margin-left: 0.3rem;
+      border: 1px solid var(--border);
     }
-
-    .active { background: #d9f7be; }
-    .waiting { background: #ffd666; }
-    .someday { background: #d6d6d6; }
-    .done { background: #b7eb8f; text-decoration: line-through; }
+    .active { background: var(--tag-active); }
+    .waiting { background: var(--tag-waiting); }
+    .someday { background: var(--tag-someday); }
+    .done { background: var(--tag-done); text-decoration: line-through; }
 
     pre {
-      background: #111;
-      color: #f5f5f5;
+      background: var(--code-bg);
+      color: var(--code-text);
       padding: 1rem;
-      border-radius: 6px;
+      border-radius: 10px;
       overflow-x: auto;
       font-size: 0.85rem;
+      border: 1px solid var(--border);
+    }
+
+    .topbar {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .btn:hover { opacity: 0.9; }
+
+    .nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
     }
   </style>
 </head>
 
 <body>
 
-<!-- ============================================================ -->
-<h1>Tyler — Personal Operating Hub</h1>
+<div class="topbar">
+  <div class="nav">
+    <strong>Tyler Operating Hub</strong>
+    <span class="meta">|</span>
+    <a href="./money-making.html">Money-Making Mode (Deep Dive)</a>
+  </div>
+
+  <div>
+    <button class="btn" id="themeToggle" type="button" aria-label="Toggle theme">
+      Toggle theme
+    </button>
+  </div>
+</div>
+
 <p class="meta">
   Canonical source of truth for tasks, priorities, check-ins, and accountability.
-  <br>ChatGPT reads this page during sessions when requested.
+  <br>When you ask ChatGPT to “fetch the hub,” it should treat this as authoritative.
 </p>
 
 
-<!-- ============================================================ -->
 <h2>1. High-Level Priorities</h2>
-
 <div class="card">
   <ul>
-    <li><strong>Money-Making Mode:</strong> Build epoxy pricing, strengthen tutoring offerings</li>
-    <li><strong>Career Development:</strong> Pursue AoPS/ID roles, maintain interview momentum</li>
-    <li><strong>System Development:</strong> Bullet journal habit + Operating Hub + Accountability Protocol</li>
+    <li><strong>Money-Making Mode:</strong> epoxy pricing + tutoring offerings</li>
+    <li><strong>Career Development:</strong> AoPS/ID roles + interview momentum</li>
+    <li><strong>Systems:</strong> bullet journal habit + accountability protocol</li>
   </ul>
 </div>
 
 
-
-<!-- ============================================================ -->
 <h2>2. Master Running To-Do List</h2>
-
 <p class="meta">
   Statuses:
   <span class="status active">ACTIVE</span>
@@ -148,14 +209,10 @@
 </ul>
 
 
-
-<!-- ============================================================ -->
 <h2>3. Active Accountabilities (TCAP Checkpoints)</h2>
-
 <div class="card">
   <p><strong>Checkpoint 001</strong></p>
   <p class="meta">Created: 2025-12-15</p>
-
   <ul>
     <li><strong>Focus:</strong> Epoxy pricing tiers</li>
     <li><strong>Definition of Done:</strong> Written Good / Better / Best tiers with rough numbers</li>
@@ -164,168 +221,102 @@
   </ul>
 </div>
 
-<!-- You can add more checkpoints below as needed -->
 
-
-
-<!-- ============================================================ -->
 <h2>4. Accountability Log</h2>
-
-<p class="meta">Newest entries go at the top. Each entry = one check-in.</p>
+<p class="meta">Newest entries go at the top.</p>
 
 <div class="log-entry">
   <span class="tag">[2025-12-15 | 09:19 ET]</span><br />
   <strong>Topic:</strong> System setup + journaling + accountability protocol<br />
   <strong>Status:</strong> Initiated<br />
-  <strong>Notes:</strong> Hybrid system established. Operating Hub concept created.
+  <strong>Notes:</strong> Hybrid system established. Operating Hub created.
 </div>
-
 <!-- Append new log entries ABOVE this comment -->
 
 
-
-<!-- ============================================================ -->
 <h2>5. Decisions & Commitments</h2>
-
-<ul class="card">
-  <li>[2025-12-15] Adopt hybrid system: Bullet Journal + Calendar + Operating Hub</li>
-  <li>[2025-12-15] Use this Render page as the canonical accountability document</li>
-  <li>[2025-12-15] TCAP (Tyler–ChatGPT Accountability Protocol) activated</li>
-</ul>
-
-
-
-<!-- ============================================================ -->
-<h2>6. Money-Making Mode — Detailed Map</h2>
-
-<p class="meta">
-  Deeper breakdown of income ideas, status, and next steps. ChatGPT can use this to prioritize and design action plans.
-</p>
-
-<h3>6.1 Epoxy & Painting</h3>
-<ul class="card">
-  <li><strong>Status:</strong> ACTIVE</li>
-  <li><strong>Primary Goal:</strong> Profitable, repeatable epoxy garage jobs</li>
-  <li><strong>Next 1–3 Actions:</strong>
-    <ul>
-      <li>Finalize Good/Better/Best epoxy pricing tiers</li>
-      <li>Create a simple quote template</li>
-      <li>Draft a 3–5 line “offer pitch” for high-end clients</li>
-    </ul>
-  </li>
-</ul>
-
-<h3>6.2 Tutoring & Teaching</h3>
-<ul class="card">
-  <li><strong>Status:</strong> ACTIVE</li>
-  <li><strong>Primary Goal:</strong> Raise effective hourly rate via higher-leverage offerings</li>
-  <li><strong>Next 1–3 Actions:</strong>
-    <ul>
-      <li>Define one SAT or contest-math small-group offer</li>
-      <li>List 3–5 students/parents to approach</li>
-      <li>Draft outreach message</li>
-    </ul>
-  </li>
-</ul>
-
-<h3>6.3 Worksheet / Resource Products</h3>
-<ul class="card">
-  <li><strong>Status:</strong> WAITING</li>
-  <li><strong>Primary Goal:</strong> Create reusable, sellable math resources</li>
-  <li><strong>Next 1–3 Actions:</strong>
-    <ul>
-      <li>Decide on first product format (PDF set, course, etc.)</li>
-      <li>Choose target audience (grade, topic)</li>
-      <li>Outline 5–10 problems for a pilot set</li>
-    </ul>
-  </li>
-</ul>
-
-<h3>6.4 Career Pivots (ID / Data)</h3>
-<ul class="card">
-  <li><strong>Status:</strong> SOMEDAY / MEDIUM-TERM</li>
-  <li><strong>Primary Goal:</strong> Build portfolio and optionality</li>
-  <li><strong>Next 1–3 Actions:</strong>
-    <ul>
-      <li>List 2–3 portfolio project ideas</li>
-      <li>Pick one “lightweight” project to start</li>
-      <li>Draft project brief</li>
-    </ul>
-  </li>
-</ul>
-
-
-
-<!-- ============================================================ -->
-<h2>7. Notes for ChatGPT</h2>
-
 <div class="card">
   <ul>
-    <li>This page is the single source of truth for accountability and Money-Making Mode.</li>
-    <li>Interpret tasks with <span class="status active">ACTIVE</span> as highest priority by default.</li>
-    <li>Use TCAP for any checkpoint-related reasoning and follow-ups.</li>
-    <li>When asked, read the JSON Snapshot below for a structured view.</li>
+    <li>[2025-12-15] Adopt hybrid system: Bullet Journal + Calendar + Operating Hub</li>
+    <li>[2025-12-15] Use this Render page as canonical accountability document</li>
+    <li>[2025-12-15] Activate TCAP for structured accountability</li>
   </ul>
 </div>
 
 
-
-<!-- ============================================================ -->
-<h2>8. Change Log</h2>
-
+<h2>6. Notes for ChatGPT</h2>
 <div class="card">
   <ul>
-    <li>[2025-12-15] Initial creation</li>
-    <li>[2025-12-16] Upgraded layout, added Money-Making Mode section and JSON snapshot</li>
+    <li>This page is the canonical “hub” for tasks + accountability.</li>
+    <li>Tasks marked <span class="status active">ACTIVE</span> are top priority by default.</li>
+    <li>Use TCAP when asked to run accountability.</li>
+    <li>For Money-Making deep dive, read <a href="./money-making.html">money-making.html</a>.</li>
   </ul>
 </div>
 
 
-
-<!-- ============================================================ -->
-<h2>9. Machine-Readable Snapshot (JSON)</h2>
-
-<p class="meta">
-  Keep roughly in sync with the sections above. ChatGPT can parse this block directly when requested.
-</p>
+<h2>7. Machine-Readable Snapshot (JSON)</h2>
+<p class="meta">Keep this roughly synced with the page above. ChatGPT can parse it directly.</p>
 
 <pre>{
   "last_updated": "2025-12-16",
-  "high_level_priorities": [
+  "pages": {
+    "hub": "index.html",
+    "money_making": "money-making.html"
+  },
+  "priorities": [
     "Money-Making: epoxy pricing + tutoring",
-    "Career: AoPS/ID roles, maintain momentum",
-    "Systems: bullet journal + Operating Hub + TCAP"
+    "Career: AoPS/ID roles",
+    "Systems: bullet journal + accountability"
   ],
   "tasks": [
-    { "id": "MM-1", "area": "Money-Making", "title": "Finalize epoxy pricing tiers", "status": "ACTIVE" },
-    { "id": "MM-2", "area": "Money-Making", "title": "Expand tutoring offerings (SAT, small group)", "status": "ACTIVE" },
-    { "id": "MM-3", "area": "Money-Making", "title": "Choose first worksheet product format", "status": "WAITING" },
-    { "id": "MM-4", "area": "Money-Making", "title": "Data analysis portfolio project", "status": "SOMEDAY" },
+    { "id": "MM-1", "title": "Finalize epoxy pricing tiers", "status": "ACTIVE" },
+    { "id": "MM-2", "title": "Expand tutoring offerings (SAT, small group)", "status": "ACTIVE" },
+    { "id": "MM-3", "title": "Choose first worksheet product format", "status": "WAITING" },
+    { "id": "MM-4", "title": "Data analysis portfolio project", "status": "SOMEDAY" },
 
-    { "id": "CW-1", "area": "Career", "title": "Continue AoPS / instructional follow-ups", "status": "ACTIVE" },
-    { "id": "CW-2", "area": "Career", "title": "Refresh resume for curriculum/ID roles", "status": "WAITING" },
+    { "id": "CW-1", "title": "Continue AoPS / instructional follow-ups", "status": "ACTIVE" },
+    { "id": "CW-2", "title": "Refresh resume for curriculum/ID roles", "status": "WAITING" },
 
-    { "id": "PS-1", "area": "Personal/Systems", "title": "Daily bullet journal habit", "status": "ACTIVE" },
-    { "id": "PS-2", "area": "Personal/Systems", "title": "Digital declutter / file cleanup", "status": "SOMEDAY" }
+    { "id": "PS-1", "title": "Daily bullet journal habit", "status": "ACTIVE" },
+    { "id": "PS-2", "title": "Digital declutter", "status": "SOMEDAY" }
   ],
   "checkpoints": [
     {
       "id": "CP-001",
-      "created": "2025-12-15",
       "focus": "Epoxy pricing tiers",
       "definition_of_done": "Written Good / Better / Best tiers with rough numbers",
       "due_date": "2025-12-18",
       "check_in": "2025-12-19",
       "status": "OPEN"
     }
-  ],
-  "decisions": [
-    { "date": "2025-12-15", "text": "Adopt hybrid system: Bullet Journal + Calendar + Operating Hub" },
-    { "date": "2025-12-15", "text": "Use this page as canonical accountability document" },
-    { "date": "2025-12-15", "text": "Activate TCAP for structured accountability" }
   ]
 }</pre>
 
+<script>
+  // Manual theme toggle (persists in localStorage). Optional, but handy.
+  (function () {
+    const KEY = "tyler_theme";
+    const btn = document.getElementById("themeToggle");
+    if (!btn) return;
+
+    const apply = (val) => {
+      if (!val) document.documentElement.removeAttribute("data-theme");
+      else document.documentElement.setAttribute("data-theme", val);
+    };
+
+    const saved = localStorage.getItem(KEY);
+    apply(saved);
+
+    btn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : current === "light" ? null : "dark";
+      if (next) localStorage.setItem(KEY, next);
+      else localStorage.removeItem(KEY);
+      apply(next);
+    });
+  })();
+</script>
 
 </body>
 </html>
