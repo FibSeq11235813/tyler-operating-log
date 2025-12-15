@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
-    /* ---------- Theme Tokens ---------- */
     :root{
       --bg: #fafafa;
       --card: #ffffff;
@@ -24,7 +23,6 @@
       --code-text: #f5f5f5;
     }
 
-    /* Auto dark mode if system prefers dark */
     @media (prefers-color-scheme: dark) {
       :root{
         --bg: #0b0d10;
@@ -44,7 +42,6 @@
       }
     }
 
-    /* Manual override via data-theme attribute */
     html[data-theme="light"]{
       --bg: #fafafa; --card:#fff; --text:#222; --muted:#666; --border:#ddd; --accent:#555;
       --tag-active:#d9f7be; --tag-waiting:#ffd666; --tag-someday:#d6d6d6; --tag-done:#b7eb8f;
@@ -56,7 +53,6 @@
       --code-bg:#07090c; --code-text:#e8e8e8;
     }
 
-    /* ---------- Base Styling ---------- */
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
@@ -125,6 +121,7 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 1rem;
+      flex-wrap: wrap;
     }
 
     .btn {
@@ -140,7 +137,7 @@
 
     .nav {
       display: flex;
-      gap: 1rem;
+      gap: 0.8rem;
       flex-wrap: wrap;
       align-items: center;
     }
@@ -153,8 +150,9 @@
   <div class="nav">
     <strong>Tyler Operating Hub</strong>
     <span class="meta">|</span>
-    <a href="./money-making.html">Money-Making Mode (Deep Dive)</a> <span class="meta">|</span> <a href="./accountability.html">Accountability</a>
-
+    <a href="./money-making.html">Money-Making</a>
+    <span class="meta">|</span>
+    <a href="./accountability.html">Accountability</a>
   </div>
 
   <div>
@@ -165,17 +163,18 @@
 </div>
 
 <p class="meta">
-  Canonical source of truth for tasks, priorities, check-ins, and accountability.
-  <br>When you ask ChatGPT to “fetch the hub,” it should treat this as authoritative.
+  Canonical hub for priorities + tasks + checkpoints.
+  <br>Timeline: Travel to TX 2025-12-19 → Return 2025-12-28 → Move to Houston early Feb.
 </p>
 
 
-<h2>1. High-Level Priorities</h2>
+<h2>1. High-Level Priorities (Next 7 Days)</h2>
 <div class="card">
   <ul>
-    <li><strong>Money-Making Mode:</strong> epoxy pricing + tutoring offerings</li>
-    <li><strong>Career Development:</strong> AoPS/ID roles + interview momentum</li>
-    <li><strong>Systems:</strong> bullet journal habit + accountability protocol</li>
+    <li><strong>New Researcher Job:</strong> onboard fast, deliver 2 small wins, build trust</li>
+    <li><strong>System:</strong> daily BuJo + hub updates + 1 TCAP check-in completed</li>
+    <li><strong>AoPS:</strong> stay on top of classes (prep + messages) without scramble</li>
+    <li><strong>Project Lane:</strong> Epoxy momentum via planning + buddy check-ins (swift + efficient)</li>
   </ul>
 </div>
 
@@ -189,34 +188,62 @@
   <span class="status done">DONE</span>
 </p>
 
-<h3>Money-Making Mode</h3>
+<h3>Researcher Job</h3>
 <ul>
-  <li>Finalize epoxy pricing tiers <span class="status active">ACTIVE</span></li>
-  <li>Expand tutoring offerings (SAT, small group) <span class="status active">ACTIVE</span></li>
-  <li>Worksheet factory — choose first product format <span class="status waiting">WAITING</span></li>
-  <li>Data analysis portfolio project <span class="status someday">SOMEDAY</span></li>
+  <li>Write 3 onboarding questions for manager (scope, success, cadence) <span class="status active">ACTIVE</span></li>
+  <li>Identify 2 small deliverables to complete by 2025-12-18 <span class="status active">ACTIVE</span></li>
+  <li>Schedule a brief 1:1 check-in (manager or key teammate) <span class="status active">ACTIVE</span></li>
+  <li>End-of-day note: 3 bullets (did / learned / next) <span class="status active">ACTIVE</span></li>
 </ul>
 
-<h3>Career & Work</h3>
+<h3>System / Organization</h3>
 <ul>
-  <li>Continue AoPS / instructional follow-ups <span class="status active">ACTIVE</span></li>
-  <li>Refresh resume for curriculum/ID roles <span class="status waiting">WAITING</span></li>
+  <li>Daily bullet journal: Top 3 + time blocks + end-of-day log <span class="status active">ACTIVE</span></li>
+  <li>Update hub pages (statuses + checkpoints) daily (2 minutes) <span class="status active">ACTIVE</span></li>
+  <li><strong>(B)</strong> Fill in Weekly Command Center (Google Doc) for Dec 15–18 sprint <span class="status waiting">WAITING</span></li>
 </ul>
 
-<h3>Personal / Systems</h3>
+<h3>AoPS</h3>
 <ul>
-  <li>Daily bullet journal habit <span class="status active">ACTIVE</span></li>
-  <li>Digital declutter / file cleanup <span class="status someday">SOMEDAY</span></li>
+  <li>Check upcoming classes + prep next session (timebox) <span class="status active">ACTIVE</span></li>
+  <li>Handle grading/messages (timebox 20 min) <span class="status waiting">WAITING</span></li>
+</ul>
+
+<h3>Epoxy (Buddy-Driven)</h3>
+<ul>
+  <li>Send buddy a check-in + propose a 20-min sync before travel <span class="status active">ACTIVE</span></li>
+  <li>Draft pricing tiers (Good/Better/Best) for discussion (not final) <span class="status active">ACTIVE</span></li>
+  <li>Draft 1-page quote template (first pass) <span class="status waiting">WAITING</span></li>
+  <li><strong>(C)</strong> Draft ready-to-send buddy message (accountabili-buddy nudge) <span class="status waiting">WAITING</span></li>
+</ul>
+
+<h3>Tutoring Improvement</h3>
+<ul>
+  <li>Productize tutoring offer upgrades (pause for now) <span class="status someday">SOMEDAY</span></li>
 </ul>
 
 
 <h2>3. Active Accountabilities (TCAP Checkpoints)</h2>
+
 <div class="card">
-  <p><strong>Checkpoint 001</strong></p>
+  <p><strong>Checkpoint CP-002</strong></p>
   <p class="meta">Created: 2025-12-15</p>
   <ul>
-    <li><strong>Focus:</strong> Epoxy pricing tiers</li>
-    <li><strong>Definition of Done:</strong> Written Good / Better / Best tiers with rough numbers</li>
+    <li><strong>Focus:</strong> Job onboarding + system adoption before travel</li>
+    <li><strong>Definition of Done:</strong>
+      2 small job wins delivered OR clearly scoped + daily BuJo done 3/4 days + hub updated + 1 TCAP check-in logged
+    </li>
+    <li><strong>Due Date:</strong> 2025-12-18</li>
+    <li><strong>Check-In:</strong> 2025-12-19</li>
+  </ul>
+</div>
+
+<div class="card">
+  <p><strong>Checkpoint CP-001</strong></p>
+  <p class="meta">Created: 2025-12-15</p>
+  <ul>
+    <li><strong>Focus:</strong> Epoxy pricing tiers (discussion-ready)</li>
+    <li><strong>Definition of Done:</strong> Written Good / Better / Best tiers with rough numbers + scheduled buddy sync</li>
     <li><strong>Due Date:</strong> 2025-12-18</li>
     <li><strong>Check-In:</strong> 2025-12-19</li>
   </ul>
@@ -224,13 +251,14 @@
 
 
 <h2>4. Accountability Log</h2>
-<p class="meta">Newest entries go at the top.</p>
+<p class="meta">Newest entries go at the top. Types: SETUP (system change) vs CHECK-IN (checkpoint review).</p>
 
 <div class="log-entry">
-  <span class="tag">[2025-12-15 | 09:19 ET]</span><br />
-  <strong>Topic:</strong> System setup + journaling + accountability protocol<br />
-  <strong>Status:</strong> Initiated<br />
-  <strong>Notes:</strong> Hybrid system established. Operating Hub created.
+  <span class="tag">[2025-12-15]</span><br />
+  <strong>Type:</strong> SETUP<br />
+  <strong>Topic:</strong> Priorities updated: researcher job + system + AoPS + epoxy (buddy-driven). Tutoring deprioritized.<br />
+  <strong>Status:</strong> Logged<br />
+  <strong>Notes:</strong> Created CP-002 for sprint + updated tasks to match travel timeline.
 </div>
 <!-- Append new log entries ABOVE this comment -->
 
@@ -238,9 +266,9 @@
 <h2>5. Decisions & Commitments</h2>
 <div class="card">
   <ul>
-    <li>[2025-12-15] Adopt hybrid system: Bullet Journal + Calendar + Operating Hub</li>
-    <li>[2025-12-15] Use this Render page as canonical accountability document</li>
-    <li>[2025-12-15] Activate TCAP for structured accountability</li>
+    <li>[2025-12-15] Use Render pages as canonical sources of truth</li>
+    <li>[2025-12-15] TCAP activated for structured accountability</li>
+    <li>[2025-12-15] Before travel: prioritize job onboarding wins + system adoption</li>
   </ul>
 </div>
 
@@ -248,45 +276,60 @@
 <h2>6. Notes for ChatGPT</h2>
 <div class="card">
   <ul>
-    <li>This page is the canonical “hub” for tasks + accountability.</li>
-    <li>Tasks marked <span class="status active">ACTIVE</span> are top priority by default.</li>
-    <li>Use TCAP when asked to run accountability.</li>
-    <li>For Money-Making deep dive, read <a href="./money-making.html">money-making.html</a>.</li>
+    <li>This hub is canonical for priorities + tasks + checkpoints.</li>
+    <li>Default priority order: Researcher Job → System → AoPS → Epoxy (buddy-driven).</li>
+    <li>When asked to “fetch the hub”: return deltas, top next actions for today, and any overdue checkpoint items.</li>
+    <li>Epoxy constraint: Tyler supports planning + accountability; buddy must approve/execute business moves.</li>
+    <li>Use TCAP for checkpoint reasoning and end with the next checkpoint.</li>
   </ul>
 </div>
 
 
 <h2>7. Machine-Readable Snapshot (JSON)</h2>
-<p class="meta">Keep this roughly synced with the page above. ChatGPT can parse it directly.</p>
+<p class="meta">Keep this synced with the page above. ChatGPT can parse it directly.</p>
 
 <pre>{
-  "last_updated": "2025-12-16",
-  "pages": {
-    "hub": "index.html",
-    "money_making": "money-making.html"
+  "last_updated": "2025-12-15",
+  "timeline": {
+    "today": "2025-12-15",
+    "travel_to_texas": "2025-12-19",
+    "return": "2025-12-28",
+    "move_to_houston_window": "2026-02-01 to 2026-02-14"
   },
-  "priorities": [
-    "Money-Making: epoxy pricing + tutoring",
-    "Career: AoPS/ID roles",
-    "Systems: bullet journal + accountability"
-  ],
+  "priority_order": ["Researcher Job", "System", "AoPS", "Epoxy (buddy-driven)"],
   "tasks": [
-    { "id": "MM-1", "title": "Finalize epoxy pricing tiers", "status": "ACTIVE" },
-    { "id": "MM-2", "title": "Expand tutoring offerings (SAT, small group)", "status": "ACTIVE" },
-    { "id": "MM-3", "title": "Choose first worksheet product format", "status": "WAITING" },
-    { "id": "MM-4", "title": "Data analysis portfolio project", "status": "SOMEDAY" },
+    { "id": "R-1", "area": "Researcher Job", "title": "Write 3 onboarding questions for manager", "status": "ACTIVE" },
+    { "id": "R-2", "area": "Researcher Job", "title": "Identify 2 small deliverables to complete by 2025-12-18", "status": "ACTIVE" },
+    { "id": "R-3", "area": "Researcher Job", "title": "Schedule brief 1:1 check-in (manager or key teammate)", "status": "ACTIVE" },
+    { "id": "R-4", "area": "Researcher Job", "title": "End-of-day note: 3 bullets (did/learned/next)", "status": "ACTIVE" },
 
-    { "id": "CW-1", "title": "Continue AoPS / instructional follow-ups", "status": "ACTIVE" },
-    { "id": "CW-2", "title": "Refresh resume for curriculum/ID roles", "status": "WAITING" },
+    { "id": "S-1", "area": "System", "title": "Daily bullet journal: Top 3 + time blocks + end-of-day log", "status": "ACTIVE" },
+    { "id": "S-2", "area": "System", "title": "Update hub pages daily (2 minutes)", "status": "ACTIVE" },
+    { "id": "S-3", "area": "System", "title": "Weekly Command Center fill-in for Dec 15–18 sprint (Option B)", "status": "WAITING" },
 
-    { "id": "PS-1", "title": "Daily bullet journal habit", "status": "ACTIVE" },
-    { "id": "PS-2", "title": "Digital declutter", "status": "SOMEDAY" }
+    { "id": "A-1", "area": "AoPS", "title": "Prep next session (timebox)", "status": "ACTIVE" },
+    { "id": "A-2", "area": "AoPS", "title": "Grading/messages (timebox 20 min)", "status": "WAITING" },
+
+    { "id": "E-1", "area": "Epoxy", "title": "Buddy check-in + propose 20-min sync before travel", "status": "ACTIVE" },
+    { "id": "E-2", "area": "Epoxy", "title": "Draft pricing tiers (discussion-ready)", "status": "ACTIVE" },
+    { "id": "E-3", "area": "Epoxy", "title": "Draft 1-page quote template", "status": "WAITING" },
+    { "id": "E-4", "area": "Epoxy", "title": "Draft buddy message (Option C)", "status": "WAITING" },
+
+    { "id": "T-1", "area": "Tutoring", "title": "Tutoring improvement upgrades (paused)", "status": "SOMEDAY" }
   ],
   "checkpoints": [
     {
+      "id": "CP-002",
+      "focus": "Job onboarding + system adoption before travel",
+      "definition_of_done": "2 small job wins delivered OR clearly scoped + daily BuJo done 3/4 days + hub updated + 1 TCAP check-in logged",
+      "due_date": "2025-12-18",
+      "check_in": "2025-12-19",
+      "status": "OPEN"
+    },
+    {
       "id": "CP-001",
-      "focus": "Epoxy pricing tiers",
-      "definition_of_done": "Written Good / Better / Best tiers with rough numbers",
+      "focus": "Epoxy pricing tiers (discussion-ready)",
+      "definition_of_done": "Written Good/Better/Best tiers with rough numbers + scheduled buddy sync",
       "due_date": "2025-12-18",
       "check_in": "2025-12-19",
       "status": "OPEN"
@@ -295,7 +338,6 @@
 }</pre>
 
 <script>
-  // Manual theme toggle (persists in localStorage). Optional, but handy.
   (function () {
     const KEY = "tyler_theme";
     const btn = document.getElementById("themeToggle");
@@ -321,4 +363,3 @@
 
 </body>
 </html>
-
