@@ -27,12 +27,9 @@
       margin: 2rem auto; max-width: 980px; padding: 0 1.2rem; color: var(--text); background: var(--bg); }
     h1{ font-size:2.1rem; margin-bottom:0.3rem; }
     h2{ margin-top:2.6rem; font-size:1.5rem; border-bottom:2px solid var(--border); padding-bottom:0.3rem; }
-    h3{ margin-top:1.4rem; font-size:1.15rem; }
     a{ color: inherit; text-decoration: underline; text-underline-offset: 3px; }
     .meta{ font-size:0.9rem; color: var(--muted); }
     .card{ background: var(--card); padding: 1rem 1.3rem; border:1px solid var(--border); border-radius:10px; margin-bottom: 1.1rem; }
-    ul{ margin-left:1.2rem; }
-
     .topbar{ display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap: wrap; margin-bottom: 1rem; }
     .btn{ background: var(--card); border:1px solid var(--border); color: var(--text); padding:0.4rem 0.7rem; border-radius:999px; cursor:pointer; font-size:0.9rem; }
 
@@ -41,16 +38,7 @@
     .risk{ background: var(--tag-risk); }
     .closed{ background: var(--tag-closed); text-decoration: line-through; }
 
-    .checkpoint{
-      border-left: 3px solid var(--accent);
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1rem 1.1rem;
-      margin-bottom: 1rem;
-    }
-
-    .log-entry{
+    .checkpoint, .log-entry{
       border-left: 3px solid var(--accent);
       background: var(--card);
       border: 1px solid var(--border);
@@ -60,15 +48,6 @@
     }
 
     pre{ background: var(--code-bg); color: var(--code-text); padding:1rem; border-radius:10px; overflow-x:auto; font-size:0.85rem; border:1px solid var(--border); }
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-    @media (min-width: 820px){
-      .grid{ grid-template-columns: 1fr 1fr; }
-    }
   </style>
 </head>
 
@@ -86,7 +65,7 @@
 </div>
 
 <p class="meta">
-  This page is optimized for TCAP check-ins.
+  Optimized for TCAP check-ins.
   <br>Ask ChatGPT: “Fetch accountability.html and run TCAP on OPEN checkpoints.”
 </p>
 
@@ -110,18 +89,22 @@
 <div class="card">
   <ul>
     <!-- Example:
-    <li><strong>CP-000</strong> — Some completed checkpoint (Closed: 2025-12-10)</li>
+    <li><strong>CP-000</strong> — Completed: ______ | Outcome: ______ | Closed: ______</li>
     -->
   </ul>
 </div>
 
 
 <h2>3. Accountability Log</h2>
-<p class="meta">Newest entries at the top. Each entry is a completed check-in.</p>
+<p class="meta">
+  Newest entries at the top.
+  <br><strong>Log types:</strong> SETUP (system changes) vs CHECK-IN (checkpoint review).
+</p>
 
 <div class="log-entry">
   <span class="meta"><strong>[2025-12-15 | 09:19 ET]</strong></span><br />
-  <strong>Check-in topic:</strong> System setup + journaling + TCAP activation<br />
+  <strong>Type:</strong> SETUP<br />
+  <strong>Checkpoint ID:</strong> N/A<br />
   <strong>Status:</strong> Initiated<br />
   <strong>Outcome:</strong> Operating hub established. Accountability protocol set.
 </div>
@@ -142,9 +125,12 @@
 <div class="card">
   <pre>ACCOUNTABILITY CHECK-IN
 Time anchor: [date + exact time + timezone]
-Focus: [checkpoint ID + focus]
+Checkpoint ID: [CP-###]
+Focus: [short]
 Definition of done: [paste it]
-Status: done / partial / not done
+Status: DONE / PARTIAL / NOT DONE
+Blocker (if any): [one line]
+Next checkpoint created: YES / NO
 Notes: [1–3 bullets]</pre>
 </div>
 
@@ -153,7 +139,7 @@ Notes: [1–3 bullets]</pre>
 <p class="meta">ChatGPT can parse this block directly.</p>
 
 <pre>{
-  "last_updated": "2025-12-16",
+  "last_updated": "2025-12-15",
   "open_checkpoints": [
     {
       "id": "CP-001",
@@ -169,15 +155,17 @@ Notes: [1–3 bullets]</pre>
   "recent_log_entries": [
     {
       "timestamp": "2025-12-15T09:19:00-05:00",
-      "topic": "System setup + journaling + TCAP activation",
+      "type": "SETUP",
+      "checkpoint_id": null,
       "status": "Initiated",
-      "outcome": "Operating hub established. Accountability protocol set."
+      "outcome": "Operating hub established. Accountability protocol set.",
+      "next_checkpoint_created": false
     }
   ],
   "notes_for_chatgpt": [
     "Run TCAP on OPEN checkpoints.",
     "If overdue, mark checkpoint as RISK and rescope.",
-    "Always end with a next checkpoint."
+    "For CHECK-IN entries: include checkpoint_id and whether a next checkpoint was created."
   ]
 }</pre>
 
