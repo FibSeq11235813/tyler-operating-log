@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tyler — Money-Making Mode</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root{
+      --bg:#fafafa; --card:#fff; --text:#222; --muted:#666; --border:#ddd; --accent:#555;
+      --tag-active:#d9f7be; --tag-waiting:#ffd666; --tag-someday:#d6d6d6; --tag-done:#b7eb8f;
+      --code-bg:#111; --code-text:#f5f5f5;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root{
+        --bg:#0b0d10; --card:#11151b; --text:#e8e8e8; --muted:#a6a6a6; --border:#242b36; --accent:#9aa4b2;
+        --tag-active:#214d2a; --tag-waiting:#5a4206; --tag-someday:#2a2f39; --tag-done:#1f5a36;
+        --code-bg:#07090c; --code-text:#e8e8e8;
+      }
+    }
+    html[data-theme="light"]{ --bg:#fafafa; --card:#fff; --text:#222; --muted:#666; --border:#ddd; --accent:#555;
+      --tag-active:#d9f7be; --tag-waiting:#ffd666; --tag-someday:#d6d6d6; --tag-done:#b7eb8f; --code-bg:#111; --code-text:#f5f5f5; }
+    html[data-theme="dark"]{ --bg:#0b0d10; --card:#11151b; --text:#e8e8e8; --muted:#a6a6a6; --border:#242b36; --accent:#9aa4b2;
+      --tag-active:#214d2a; --tag-waiting:#5a4206; --tag-someday:#2a2f39; --tag-done:#1f5a36; --code-bg:#07090c; --code-text:#e8e8e8; }
+
+    body{ font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.6;
+      margin: 2rem auto; max-width: 980px; padding: 0 1.2rem; color: var(--text); background: var(--bg); }
+    h1{ font-size:2.1rem; margin-bottom:0.3rem; }
+    h2{ margin-top:2.6rem; font-size:1.5rem; border-bottom:2px solid var(--border); padding-bottom:0.3rem; }
+    h3{ margin-top:1.4rem; font-size:1.15rem; }
+    a{ color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+    .meta{ font-size:0.9rem; color: var(--muted); }
+    .card{ background: var(--card); padding: 1rem 1.3rem; border:1px solid var(--border); border-radius:10px; margin-bottom: 1.1rem; }
+    ul{ margin-left:1.2rem; }
+    .status{ font-size:0.85rem; padding:2px 8px; border-radius:999px; border:1px solid var(--border); margin-left:0.3rem; background: var(--tag-someday); }
+    .active{ background: var(--tag-active); } .waiting{ background: var(--tag-waiting); } .someday{ background: var(--tag-someday); } .done{ background: var(--tag-done); text-decoration: line-through; }
+    pre{ background: var(--code-bg); color: var(--code-text); padding:1rem; border-radius:10px; overflow-x:auto; font-size:0.85rem; border:1px solid var(--border); }
+    .topbar{ display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .btn{ background: var(--card); border:1px solid var(--border); color: var(--text); padding:0.4rem 0.7rem; border-radius:999px; cursor:pointer; font-size:0.9rem; }
+  </style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <div>
+    <strong>Tyler — Money-Making Mode</strong>
+    <span class="meta"> | </span>
+    <a href="./index.html">Back to Hub</a>
+  </div>
+  <button class="btn" id="themeToggle" type="button">Toggle theme</button>
+</div>
+
+<p class="meta">
+  This page is the deep-dive master list for income streams, pipelines, offers, and next actions.
+  <br>Ask ChatGPT to “fetch money-making.html and run Make-Money Mode.”
+</p>
+
+<h2>1. Current Focus</h2>
+<div class="card">
+  <ul>
+    <li><strong>Primary:</strong> Epoxy pricing tiers → quote template → outreach</li>
+    <li><strong>Secondary:</strong> Tutoring offer upgrade (small group) → outreach</li>
+  </ul>
+</div>
+
+<h2>2. Master List of Income Plays</h2>
+<p class="meta">Statuses:
+  <span class="status active">ACTIVE</span>
+  <span class="status waiting">WAITING</span>
+  <span class="status someday">SOMEDAY</span>
+  <span class="status done">DONE</span>
+</p>
+
+<h3>Epoxy & Painting (Edgemore)</h3>
+<div class="card">
+  <ul>
+    <li>Pricing tiers (Good/Better/Best) <span class="status active">ACTIVE</span></li>
+    <li>Quote template (1 page) <span class="status waiting">WAITING</span></li>
+    <li>Client outreach script (text/email) <span class="status waiting">WAITING</span></li>
+    <li>Before/After portfolio page <span class="status someday">SOMEDAY</span></li>
+  </ul>
+</div>
+
+<h3>Tutoring</h3>
+<div class="card">
+  <ul>
+    <li>Small-group SAT / contest offer definition <span class="status active">ACTIVE</span></li>
+    <li>Outreach list (3–10 families) <span class="status waiting">WAITING</span></li>
+    <li>“Lead magnet” worksheet freebie <span class="status someday">SOMEDAY</span></li>
+  </ul>
+</div>
+
+<h3>Digital Products (Math)</h3>
+<div class="card">
+  <ul>
+    <li>First worksheet pack pilot <span class="status waiting">WAITING</span></li>
+    <li>Sales channel choice (TpT / Gumroad / direct) <span class="status waiting">WAITING</span></li>
+    <li>Longer course idea <span class="status someday">SOMEDAY</span></li>
+  </ul>
+</div>
+
+<h3>Career Pivots (Medium-Term)</h3>
+<div class="card">
+  <ul>
+    <li>Instructional Design portfolio piece <span class="status someday">SOMEDAY</span></li>
+    <li>Data analysis portfolio piece <span class="status someday">SOMEDAY</span></li>
+  </ul>
+</div>
+
+<h2>3. Pipeline</h2>
+<div class="card">
+  <p class="meta">Keep this lightweight. Add rows as needed.</p>
+  <ul>
+    <li><strong>Lead:</strong> ________ | <strong>Offer:</strong> ________ | <strong>Stage:</strong> Prospect / Contacted / Quoted / Scheduled / Closed | <strong>Next:</strong> ________ | <strong>Date:</strong> ________</li>
+  </ul>
+</div>
+
+<h2>4. Active Checkpoints (Money-Making)</h2>
+<div class="card">
+  <ul>
+    <li><strong>CP-001</strong> — Epoxy pricing tiers: define Done → due 2025-12-18 → check-in 2025-12-19 <span class="status active">ACTIVE</span></li>
+  </ul>
+</div>
+
+<h2>5. Notes for ChatGPT</h2>
+<div class="card">
+  <ul>
+    <li>Default to the highest ROI, lowest friction moves first.</li>
+    <li>Prefer actions that produce revenue within 30–60 days.</li>
+    <li>When asked, propose a 7-day plan + scripts/templates as deliverables.</li>
+    <li>Use the JSON snapshot for structured parsing.</li>
+  </ul>
+</div>
+
+<h2>6. Machine-Readable Snapshot (JSON)</h2>
+<pre>{
+  "last_updated": "2025-12-16",
+  "focus": {
+    "primary": "Epoxy pricing tiers → quote template → outreach",
+    "secondary": "Tutoring offer upgrade → outreach"
+  },
+  "plays": [
+    { "id": "EP-1", "category": "Epoxy", "title": "Pricing tiers (Good/Better/Best)", "status": "ACTIVE" },
+    { "id": "EP-2", "category": "Epoxy", "title": "Quote template (1 page)", "status": "WAITING" },
+    { "id": "EP-3", "category": "Epoxy", "title": "Client outreach script", "status": "WAITING" },
+
+    { "id": "TU-1", "category": "Tutoring", "title": "Small-group offer definition", "status": "ACTIVE" },
+    { "id": "TU-2", "category": "Tutoring", "title": "Outreach list (3–10 families)", "status": "WAITING" },
+
+    { "id": "DP-1", "category": "Digital Products", "title": "First worksheet pack pilot", "status": "WAITING" },
+    { "id": "DP-2", "category": "Digital Products", "title": "Choose sales channel", "status": "WAITING" }
+  ],
+  "pipeline": [],
+  "checkpoints": [
+    { "id": "CP-001", "focus": "Epoxy pricing tiers", "due_date": "2025-12-18", "check_in": "2025-12-19", "status": "OPEN" }
+  ]
+}</pre>
+
+<script>
+  (function () {
+    const KEY = "tyler_theme";
+    const btn = document.getElementById("themeToggle");
+    if (!btn) return;
+
+    const apply = (val) => {
+      if (!val) document.documentElement.removeAttribute("data-theme");
+      else document.documentElement.setAttribute("data-theme", val);
+    };
+
+    const saved = localStorage.getItem(KEY);
+    apply(saved);
+
+    btn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : current === "light" ? null : "dark";
+      if (next) localStorage.setItem(KEY, next);
+      else localStorage.removeItem(KEY);
+      apply(next);
+    });
+  })();
+</script>
+
+</body>
+</html>
