@@ -82,6 +82,14 @@
     .someday { background: #d6d6d6; }
     .done { background: #b7eb8f; text-decoration: line-through; }
 
+    pre {
+      background: #111;
+      color: #f5f5f5;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 0.85rem;
+    }
   </style>
 </head>
 
@@ -90,8 +98,8 @@
 <!-- ============================================================ -->
 <h1>Tyler — Personal Operating Hub</h1>
 <p class="meta">
-  This page serves as the canonical source of truth for tasks, priorities, check-ins, and accountability.
-  <br>ChatGPT reads this during each session when requested.
+  Canonical source of truth for tasks, priorities, check-ins, and accountability.
+  <br>ChatGPT reads this page during sessions when requested.
 </p>
 
 
@@ -111,7 +119,13 @@
 <!-- ============================================================ -->
 <h2>2. Master Running To-Do List</h2>
 
-<p class="meta">Statuses: <span class="status active">ACTIVE</span> <span class="status waiting">WAITING</span> <span class="status someday">SOMEDAY</span> <span class="status done">DONE</span></p>
+<p class="meta">
+  Statuses:
+  <span class="status active">ACTIVE</span>
+  <span class="status waiting">WAITING</span>
+  <span class="status someday">SOMEDAY</span>
+  <span class="status done">DONE</span>
+</p>
 
 <h3>Money-Making Mode</h3>
 <ul>
@@ -150,12 +164,14 @@
   </ul>
 </div>
 
+<!-- You can add more checkpoints below as needed -->
+
 
 
 <!-- ============================================================ -->
 <h2>4. Accountability Log</h2>
 
-<p class="meta">Each entry is written chronologically. Newer entries appear at the top.</p>
+<p class="meta">Newest entries go at the top. Each entry = one check-in.</p>
 
 <div class="log-entry">
   <span class="tag">[2025-12-15 | 09:19 ET]</span><br />
@@ -164,7 +180,7 @@
   <strong>Notes:</strong> Hybrid system established. Operating Hub concept created.
 </div>
 
-<!-- Append new log entries above this comment -->
+<!-- Append new log entries ABOVE this comment -->
 
 
 
@@ -180,28 +196,135 @@
 
 
 <!-- ============================================================ -->
-<h2>6. Notes for ChatGPT</h2>
+<h2>6. Money-Making Mode — Detailed Map</h2>
+
+<p class="meta">
+  Deeper breakdown of income ideas, status, and next steps. ChatGPT can use this to prioritize and design action plans.
+</p>
+
+<h3>6.1 Epoxy & Painting</h3>
+<ul class="card">
+  <li><strong>Status:</strong> ACTIVE</li>
+  <li><strong>Primary Goal:</strong> Profitable, repeatable epoxy garage jobs</li>
+  <li><strong>Next 1–3 Actions:</strong>
+    <ul>
+      <li>Finalize Good/Better/Best epoxy pricing tiers</li>
+      <li>Create a simple quote template</li>
+      <li>Draft a 3–5 line “offer pitch” for high-end clients</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>6.2 Tutoring & Teaching</h3>
+<ul class="card">
+  <li><strong>Status:</strong> ACTIVE</li>
+  <li><strong>Primary Goal:</strong> Raise effective hourly rate via higher-leverage offerings</li>
+  <li><strong>Next 1–3 Actions:</strong>
+    <ul>
+      <li>Define one SAT or contest-math small-group offer</li>
+      <li>List 3–5 students/parents to approach</li>
+      <li>Draft outreach message</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>6.3 Worksheet / Resource Products</h3>
+<ul class="card">
+  <li><strong>Status:</strong> WAITING</li>
+  <li><strong>Primary Goal:</strong> Create reusable, sellable math resources</li>
+  <li><strong>Next 1–3 Actions:</strong>
+    <ul>
+      <li>Decide on first product format (PDF set, course, etc.)</li>
+      <li>Choose target audience (grade, topic)</li>
+      <li>Outline 5–10 problems for a pilot set</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>6.4 Career Pivots (ID / Data)</h3>
+<ul class="card">
+  <li><strong>Status:</strong> SOMEDAY / MEDIUM-TERM</li>
+  <li><strong>Primary Goal:</strong> Build portfolio and optionality</li>
+  <li><strong>Next 1–3 Actions:</strong>
+    <ul>
+      <li>List 2–3 portfolio project ideas</li>
+      <li>Pick one “lightweight” project to start</li>
+      <li>Draft project brief</li>
+    </ul>
+  </li>
+</ul>
+
+
+
+<!-- ============================================================ -->
+<h2>7. Notes for ChatGPT</h2>
 
 <div class="card">
   <ul>
-    <li>This page is the single source of truth for accountability.</li>
-    <li>Interpret tasks with ACTIVE status as current priorities.</li>
-    <li>Checkpoints must be enforced using TCAP protocol.</li>
-    <li>When fetched, summarize high-level deltas & propose next actions.</li>
+    <li>This page is the single source of truth for accountability and Money-Making Mode.</li>
+    <li>Interpret tasks with <span class="status active">ACTIVE</span> as highest priority by default.</li>
+    <li>Use TCAP for any checkpoint-related reasoning and follow-ups.</li>
+    <li>When asked, read the JSON Snapshot below for a structured view.</li>
   </ul>
 </div>
 
 
 
 <!-- ============================================================ -->
-<h2>7. Change Log</h2>
+<h2>8. Change Log</h2>
 
 <div class="card">
   <ul>
     <li>[2025-12-15] Initial creation</li>
-    <li>[2025-12-16] Upgraded layout, structure, clarity</li>
+    <li>[2025-12-16] Upgraded layout, added Money-Making Mode section and JSON snapshot</li>
   </ul>
 </div>
+
+
+
+<!-- ============================================================ -->
+<h2>9. Machine-Readable Snapshot (JSON)</h2>
+
+<p class="meta">
+  Keep roughly in sync with the sections above. ChatGPT can parse this block directly when requested.
+</p>
+
+<pre>{
+  "last_updated": "2025-12-16",
+  "high_level_priorities": [
+    "Money-Making: epoxy pricing + tutoring",
+    "Career: AoPS/ID roles, maintain momentum",
+    "Systems: bullet journal + Operating Hub + TCAP"
+  ],
+  "tasks": [
+    { "id": "MM-1", "area": "Money-Making", "title": "Finalize epoxy pricing tiers", "status": "ACTIVE" },
+    { "id": "MM-2", "area": "Money-Making", "title": "Expand tutoring offerings (SAT, small group)", "status": "ACTIVE" },
+    { "id": "MM-3", "area": "Money-Making", "title": "Choose first worksheet product format", "status": "WAITING" },
+    { "id": "MM-4", "area": "Money-Making", "title": "Data analysis portfolio project", "status": "SOMEDAY" },
+
+    { "id": "CW-1", "area": "Career", "title": "Continue AoPS / instructional follow-ups", "status": "ACTIVE" },
+    { "id": "CW-2", "area": "Career", "title": "Refresh resume for curriculum/ID roles", "status": "WAITING" },
+
+    { "id": "PS-1", "area": "Personal/Systems", "title": "Daily bullet journal habit", "status": "ACTIVE" },
+    { "id": "PS-2", "area": "Personal/Systems", "title": "Digital declutter / file cleanup", "status": "SOMEDAY" }
+  ],
+  "checkpoints": [
+    {
+      "id": "CP-001",
+      "created": "2025-12-15",
+      "focus": "Epoxy pricing tiers",
+      "definition_of_done": "Written Good / Better / Best tiers with rough numbers",
+      "due_date": "2025-12-18",
+      "check_in": "2025-12-19",
+      "status": "OPEN"
+    }
+  ],
+  "decisions": [
+    { "date": "2025-12-15", "text": "Adopt hybrid system: Bullet Journal + Calendar + Operating Hub" },
+    { "date": "2025-12-15", "text": "Use this page as canonical accountability document" },
+    { "date": "2025-12-15", "text": "Activate TCAP for structured accountability" }
+  ]
+}</pre>
 
 
 </body>
