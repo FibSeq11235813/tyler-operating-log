@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tyler — Accountability</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root{
+      --bg:#fafafa; --card:#fff; --text:#222; --muted:#666; --border:#ddd; --accent:#555;
+      --tag-open:#d9f7be; --tag-risk:#ffd666; --tag-closed:#b7eb8f;
+      --code-bg:#111; --code-text:#f5f5f5;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root{
+        --bg:#0b0d10; --card:#11151b; --text:#e8e8e8; --muted:#a6a6a6; --border:#242b36; --accent:#9aa4b2;
+        --tag-open:#214d2a; --tag-risk:#5a4206; --tag-closed:#1f5a36;
+        --code-bg:#07090c; --code-text:#e8e8e8;
+      }
+    }
+    html[data-theme="light"]{ --bg:#fafafa; --card:#fff; --text:#222; --muted:#666; --border:#ddd; --accent:#555;
+      --tag-open:#d9f7be; --tag-risk:#ffd666; --tag-closed:#b7eb8f; --code-bg:#111; --code-text:#f5f5f5; }
+    html[data-theme="dark"]{ --bg:#0b0d10; --card:#11151b; --text:#e8e8e8; --muted:#a6a6a6; --border:#242b36; --accent:#9aa4b2;
+      --tag-open:#214d2a; --tag-risk:#5a4206; --tag-closed:#1f5a36; --code-bg:#07090c; --code-text:#e8e8e8; }
+
+    body{ font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.6;
+      margin: 2rem auto; max-width: 980px; padding: 0 1.2rem; color: var(--text); background: var(--bg); }
+    h1{ font-size:2.1rem; margin-bottom:0.3rem; }
+    h2{ margin-top:2.6rem; font-size:1.5rem; border-bottom:2px solid var(--border); padding-bottom:0.3rem; }
+    h3{ margin-top:1.4rem; font-size:1.15rem; }
+    a{ color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+    .meta{ font-size:0.9rem; color: var(--muted); }
+    .card{ background: var(--card); padding: 1rem 1.3rem; border:1px solid var(--border); border-radius:10px; margin-bottom: 1.1rem; }
+    ul{ margin-left:1.2rem; }
+
+    .topbar{ display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .btn{ background: var(--card); border:1px solid var(--border); color: var(--text); padding:0.4rem 0.7rem; border-radius:999px; cursor:pointer; font-size:0.9rem; }
+
+    .pill{ font-size:0.85rem; padding:2px 10px; border-radius:999px; border:1px solid var(--border); }
+    .open{ background: var(--tag-open); }
+    .risk{ background: var(--tag-risk); }
+    .closed{ background: var(--tag-closed); text-decoration: line-through; }
+
+    .checkpoint{
+      border-left: 3px solid var(--accent);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .log-entry{
+      border-left: 3px solid var(--accent);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    pre{ background: var(--code-bg); color: var(--code-text); padding:1rem; border-radius:10px; overflow-x:auto; font-size:0.85rem; border:1px solid var(--border); }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 820px){
+      .grid{ grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <div>
+    <strong>Tyler — Accountability</strong>
+    <span class="meta"> | </span>
+    <a href="./index.html">Hub</a>
+    <span class="meta"> | </span>
+    <a href="./money-making.html">Money-Making</a>
+  </div>
+  <button class="btn" id="themeToggle" type="button">Toggle theme</button>
+</div>
+
+<p class="meta">
+  This page is optimized for TCAP check-ins.
+  <br>Ask ChatGPT: “Fetch accountability.html and run TCAP on OPEN checkpoints.”
+</p>
+
+<h2>1. Active Checkpoints</h2>
+<p class="meta">Keep OPEN checkpoints here. If overdue, mark as RISK. Completed ones go to Archive.</p>
+
+<div class="checkpoint">
+  <div class="meta"><strong>CP-001</strong> <span class="pill open">OPEN</span> | Created: 2025-12-15</div>
+  <div><strong>Focus:</strong> Epoxy pricing tiers</div>
+  <div><strong>Definition of done:</strong> Written Good / Better / Best tiers with rough numbers</div>
+  <div><strong>Due:</strong> 2025-12-18</div>
+  <div><strong>Check-in:</strong> 2025-12-19</div>
+</div>
+
+<!-- Add new OPEN checkpoints ABOVE this comment -->
+
+
+<h2>2. Checkpoint Archive</h2>
+<p class="meta">Move completed checkpoints here. Keep history.</p>
+
+<div class="card">
+  <ul>
+    <!-- Example:
+    <li><strong>CP-000</strong> — Some completed checkpoint (Closed: 2025-12-10)</li>
+    -->
+  </ul>
+</div>
+
+
+<h2>3. Accountability Log</h2>
+<p class="meta">Newest entries at the top. Each entry is a completed check-in.</p>
+
+<div class="log-entry">
+  <span class="meta"><strong>[2025-12-15 | 09:19 ET]</strong></span><br />
+  <strong>Check-in topic:</strong> System setup + journaling + TCAP activation<br />
+  <strong>Status:</strong> Initiated<br />
+  <strong>Outcome:</strong> Operating hub established. Accountability protocol set.
+</div>
+
+<!-- Append new log entries ABOVE this comment -->
+
+
+<h2>4. Decisions & Commitments</h2>
+<div class="card">
+  <ul>
+    <li>[2025-12-15] TCAP activated for structured accountability</li>
+    <li>[2025-12-15] Render pages are canonical sources of truth</li>
+  </ul>
+</div>
+
+
+<h2>5. TCAP Check-In Template (Copy/Paste)</h2>
+<div class="card">
+  <pre>ACCOUNTABILITY CHECK-IN
+Time anchor: [date + exact time + timezone]
+Focus: [checkpoint ID + focus]
+Definition of done: [paste it]
+Status: done / partial / not done
+Notes: [1–3 bullets]</pre>
+</div>
+
+
+<h2>6. Machine-Readable Snapshot (JSON)</h2>
+<p class="meta">ChatGPT can parse this block directly.</p>
+
+<pre>{
+  "last_updated": "2025-12-16",
+  "open_checkpoints": [
+    {
+      "id": "CP-001",
+      "status": "OPEN",
+      "created": "2025-12-15",
+      "focus": "Epoxy pricing tiers",
+      "definition_of_done": "Written Good / Better / Best tiers with rough numbers",
+      "due_date": "2025-12-18",
+      "check_in": "2025-12-19"
+    }
+  ],
+  "archive_checkpoints": [],
+  "recent_log_entries": [
+    {
+      "timestamp": "2025-12-15T09:19:00-05:00",
+      "topic": "System setup + journaling + TCAP activation",
+      "status": "Initiated",
+      "outcome": "Operating hub established. Accountability protocol set."
+    }
+  ],
+  "notes_for_chatgpt": [
+    "Run TCAP on OPEN checkpoints.",
+    "If overdue, mark checkpoint as RISK and rescope.",
+    "Always end with a next checkpoint."
+  ]
+}</pre>
+
+<script>
+  (function () {
+    const KEY = "tyler_theme";
+    const btn = document.getElementById("themeToggle");
+    if (!btn) return;
+
+    const apply = (val) => {
+      if (!val) document.documentElement.removeAttribute("data-theme");
+      else document.documentElement.setAttribute("data-theme", val);
+    };
+
+    const saved = localStorage.getItem(KEY);
+    apply(saved);
+
+    btn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : current === "light" ? null : "dark";
+      if (next) localStorage.setItem(KEY, next);
+      else localStorage.removeItem(KEY);
+      apply(next);
+    });
+  })();
+</script>
+
+</body>
+</html>
