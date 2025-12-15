@@ -2,156 +2,207 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Tyler — Personal Operating Log</title>
+  <title>Tyler — Personal Operating Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Public operating document for tasks, accountability, and ongoing logs." />
+
   <style>
+    /* ---------- Base Styling ---------- */
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.5;
-      margin: 2rem;
+      line-height: 1.6;
+      margin: 2rem auto;
       max-width: 900px;
+      padding: 0 1.2rem;
+      color: #222;
+      background: #fafafa;
     }
-    h1, h2, h3 {
-      margin-top: 2.5rem;
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.3rem;
     }
-    ul {
-      margin-left: 1.5rem;
+
+    h2 {
+      margin-top: 3rem;
+      font-size: 1.6rem;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.3rem;
     }
-    .meta {
-      color: #555;
-      font-size: 0.9rem;
+
+    h3 {
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
     }
+
     .section {
-      border-top: 2px solid #ddd;
+      margin-top: 2rem;
       padding-top: 1.5rem;
     }
-    .log-entry {
-      margin-bottom: 1.5rem;
+
+    ul {
+      margin-left: 1.2rem;
     }
+
+    .meta {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .card {
+      background: #fff;
+      padding: 1rem 1.3rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin-bottom: 1.4rem;
+    }
+
+    .log-entry {
+      border-left: 3px solid #555;
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+      background: #fff;
+      padding: 1rem;
+    }
+
     .tag {
       font-weight: bold;
     }
+
+    /* Task status tags */
+    .status {
+      font-size: 0.85rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #eee;
+      margin-left: 0.3rem;
+    }
+
+    .active { background: #d9f7be; }
+    .waiting { background: #ffd666; }
+    .someday { background: #d6d6d6; }
+    .done { background: #b7eb8f; text-decoration: line-through; }
+
   </style>
 </head>
 
 <body>
 
-<h1>Tyler — Personal Operating Log</h1>
-
+<!-- ============================================================ -->
+<h1>Tyler — Personal Operating Hub</h1>
 <p class="meta">
-  Purpose: Single public source of truth for tasks, accountability, and progress.
-  <br />
-  Updated manually. Queried by ChatGPT on demand.
+  This page serves as the canonical source of truth for tasks, priorities, check-ins, and accountability.
+  <br>ChatGPT reads this during each session when requested.
 </p>
 
-<!-- ============================ -->
-<div class="section">
-<h2>1. Master Running To-Do List</h2>
 
-<p class="meta">
-  Status legend: [ACTIVE] [WAITING] [SOMEDAY] [DONE]
-</p>
+<!-- ============================================================ -->
+<h2>1. High-Level Priorities</h2>
+
+<div class="card">
+  <ul>
+    <li><strong>Money-Making Mode:</strong> Build epoxy pricing, strengthen tutoring offerings</li>
+    <li><strong>Career Development:</strong> Pursue AoPS/ID roles, maintain interview momentum</li>
+    <li><strong>System Development:</strong> Bullet journal habit + Operating Hub + Accountability Protocol</li>
+  </ul>
+</div>
+
+
+
+<!-- ============================================================ -->
+<h2>2. Master Running To-Do List</h2>
+
+<p class="meta">Statuses: <span class="status active">ACTIVE</span> <span class="status waiting">WAITING</span> <span class="status someday">SOMEDAY</span> <span class="status done">DONE</span></p>
 
 <h3>Money-Making Mode</h3>
 <ul>
-  <li>[ACTIVE] Finalize epoxy pricing tiers (Good / Better / Best)</li>
-  <li>[ACTIVE] Expand private tutoring offerings (SAT / small group)</li>
-  <li>[WAITING] Worksheet factory — decide first product format</li>
-  <li>[SOMEDAY] Data analysis portfolio project</li>
+  <li>Finalize epoxy pricing tiers <span class="status active">ACTIVE</span></li>
+  <li>Expand tutoring offerings (SAT, small group) <span class="status active">ACTIVE</span></li>
+  <li>Worksheet factory — choose first product format <span class="status waiting">WAITING</span></li>
+  <li>Data analysis portfolio project <span class="status someday">SOMEDAY</span></li>
 </ul>
 
 <h3>Career & Work</h3>
 <ul>
-  <li>[ACTIVE] Continue AoPS / instructional roles follow-ups</li>
-  <li>[WAITING] Resume refresh for curriculum / ID roles</li>
+  <li>Continue AoPS / instructional follow-ups <span class="status active">ACTIVE</span></li>
+  <li>Refresh resume for curriculum/ID roles <span class="status waiting">WAITING</span></li>
 </ul>
 
 <h3>Personal / Systems</h3>
 <ul>
-  <li>[ACTIVE] Establish daily bullet journal habit</li>
-  <li>[SOMEDAY] Deep clean / simplify digital files</li>
+  <li>Daily bullet journal habit <span class="status active">ACTIVE</span></li>
+  <li>Digital declutter / file cleanup <span class="status someday">SOMEDAY</span></li>
 </ul>
+
+
+
+<!-- ============================================================ -->
+<h2>3. Active Accountabilities (TCAP Checkpoints)</h2>
+
+<div class="card">
+  <p><strong>Checkpoint 001</strong></p>
+  <p class="meta">Created: 2025-12-15</p>
+
+  <ul>
+    <li><strong>Focus:</strong> Epoxy pricing tiers</li>
+    <li><strong>Definition of Done:</strong> Written Good / Better / Best tiers with rough numbers</li>
+    <li><strong>Due Date:</strong> 2025-12-18</li>
+    <li><strong>Check-In:</strong> 2025-12-19</li>
+  </ul>
 </div>
 
-<!-- ============================ -->
-<div class="section">
-<h2>2. Active Checkpoints (Accountability)</h2>
 
-<p class="meta">
-  Format:
-  Created | Focus | Definition of Done | Due | Check-in
-</p>
 
-<ul>
-  <li>
-    <strong>Created:</strong> 2025-12-15<br />
-    <strong>Focus:</strong> Epoxy pricing tiers<br />
-    <strong>Definition of done:</strong> Written Good / Better / Best tiers with rough numbers<br />
-    <strong>Due:</strong> 2025-12-18<br />
-    <strong>Check-in:</strong> 2025-12-19
-  </li>
-</ul>
-</div>
+<!-- ============================================================ -->
+<h2>4. Accountability Log</h2>
 
-<!-- ============================ -->
-<div class="section">
-<h2>3. Accountability Log</h2>
-
-<p class="meta">
-  Each entry represents a completed check-in.
-</p>
+<p class="meta">Each entry is written chronologically. Newer entries appear at the top.</p>
 
 <div class="log-entry">
-  <p>
-    <span class="tag">[2025-12-15 | 09:19 ET]</span><br />
-    <strong>Topic:</strong> System setup / journaling / accountability protocol<br />
-    <strong>Status:</strong> Initiated<br />
-    <strong>Notes:</strong> Established hybrid system, bullet journal, and TCAP protocol.
-  </p>
+  <span class="tag">[2025-12-15 | 09:19 ET]</span><br />
+  <strong>Topic:</strong> System setup + journaling + accountability protocol<br />
+  <strong>Status:</strong> Initiated<br />
+  <strong>Notes:</strong> Hybrid system established. Operating Hub concept created.
 </div>
 
-<!-- New log entries appended below -->
-</div>
+<!-- Append new log entries above this comment -->
 
-<!-- ============================ -->
-<div class="section">
-<h2>4. Decisions & Commitments</h2>
 
-<p class="meta">
-  High-signal decisions that should persist over time.
-</p>
 
-<ul>
-  <li>[2025-12-15] Adopt hybrid system: Bullet Journal + Calendar + Docs + ChatGPT</li>
-  <li>[2025-12-15] Use public HTML page as canonical accountability document</li>
+<!-- ============================================================ -->
+<h2>5. Decisions & Commitments</h2>
+
+<ul class="card">
+  <li>[2025-12-15] Adopt hybrid system: Bullet Journal + Calendar + Operating Hub</li>
+  <li>[2025-12-15] Use this Render page as the canonical accountability document</li>
+  <li>[2025-12-15] TCAP (Tyler–ChatGPT Accountability Protocol) activated</li>
 </ul>
+
+
+
+<!-- ============================================================ -->
+<h2>6. Notes for ChatGPT</h2>
+
+<div class="card">
+  <ul>
+    <li>This page is the single source of truth for accountability.</li>
+    <li>Interpret tasks with ACTIVE status as current priorities.</li>
+    <li>Checkpoints must be enforced using TCAP protocol.</li>
+    <li>When fetched, summarize high-level deltas & propose next actions.</li>
+  </ul>
 </div>
 
-<!-- ============================ -->
-<div class="section">
-<h2>5. Notes / Context for ChatGPT</h2>
 
-<p class="meta">
-  This section is written *for the AI*.
-</p>
 
-<ul>
-  <li>This page is the canonical source of truth.</li>
-  <li>Tasks marked [ACTIVE] should be treated as current priorities.</li>
-  <li>Checkpoints should be enforced via the TCAP protocol.</li>
-  <li>When queried, summarize changes and propose next actions.</li>
-</ul>
+<!-- ============================================================ -->
+<h2>7. Change Log</h2>
+
+<div class="card">
+  <ul>
+    <li>[2025-12-15] Initial creation</li>
+    <li>[2025-12-16] Upgraded layout, structure, clarity</li>
+  </ul>
 </div>
 
-<!-- ============================ -->
-<div class="section">
-<h2>6. Change Log</h2>
-
-<ul>
-  <li>[2025-12-15] Initial creation of operating log</li>
-</ul>
-</div>
 
 </body>
 </html>
