@@ -18,6 +18,7 @@
       --tag-waiting: #ffd666;
       --tag-someday: #d6d6d6;
       --tag-done: #b7eb8f;
+      --tag-paused: #e6e6e6;
 
       --code-bg: #111111;
       --code-text: #f5f5f5;
@@ -36,6 +37,7 @@
         --tag-waiting: #5a4206;
         --tag-someday: #2a2f39;
         --tag-done: #1f5a36;
+        --tag-paused: #1b2029;
 
         --code-bg: #07090c;
         --code-text: #e8e8e8;
@@ -44,12 +46,12 @@
 
     html[data-theme="light"]{
       --bg: #fafafa; --card:#fff; --text:#222; --muted:#666; --border:#ddd; --accent:#555;
-      --tag-active:#d9f7be; --tag-waiting:#ffd666; --tag-someday:#d6d6d6; --tag-done:#b7eb8f;
+      --tag-active:#d9f7be; --tag-waiting:#ffd666; --tag-someday:#d6d6d6; --tag-done:#b7eb8f; --tag-paused:#e6e6e6;
       --code-bg:#111; --code-text:#f5f5f5;
     }
     html[data-theme="dark"]{
       --bg:#0b0d10; --card:#11151b; --text:#e8e8e8; --muted:#a6a6a6; --border:#242b36; --accent:#9aa4b2;
-      --tag-active:#214d2a; --tag-waiting:#5a4206; --tag-someday:#2a2f39; --tag-done:#1f5a36;
+      --tag-active:#214d2a; --tag-waiting:#5a4206; --tag-someday:#2a2f39; --tag-done:#1f5a36; --tag-paused:#1b2029;
       --code-bg:#07090c; --code-text:#e8e8e8;
     }
 
@@ -104,6 +106,7 @@
     .waiting { background: var(--tag-waiting); }
     .someday { background: var(--tag-someday); }
     .done { background: var(--tag-done); text-decoration: line-through; }
+    .paused { background: var(--tag-paused); }
 
     pre {
       background: var(--code-bg);
@@ -171,10 +174,10 @@
 <h2>1. High-Level Priorities (Next 7 Days)</h2>
 <div class="card">
   <ul>
-    <li><strong>New Researcher Job:</strong> onboard fast, deliver 2 small wins, build trust</li>
-    <li><strong>System:</strong> daily BuJo + hub updates + 1 TCAP check-in completed</li>
+    <li><strong>New Researcher Job:</strong> onboard fast, deliver early wins, build trust</li>
+    <li><strong>System:</strong> daily BuJo + hub updates + 1 TCAP check-in logged</li>
     <li><strong>AoPS:</strong> stay on top of classes (prep + messages) without scramble</li>
-    <li><strong>Project Lane:</strong> Epoxy momentum via planning + buddy check-ins (swift + efficient)</li>
+    <li><strong>Project Lane:</strong> epoxy momentum via planning + buddy check-ins (swift + efficient)</li>
   </ul>
 </div>
 
@@ -185,6 +188,7 @@
   <span class="status active">ACTIVE</span>
   <span class="status waiting">WAITING</span>
   <span class="status someday">SOMEDAY</span>
+  <span class="status paused">PAUSED</span>
   <span class="status done">DONE</span>
 </p>
 
@@ -217,9 +221,9 @@
   <li><strong>(C)</strong> Draft ready-to-send buddy message (accountabili-buddy nudge) <span class="status waiting">WAITING</span></li>
 </ul>
 
-<h3>Tutoring Improvement</h3>
+<h3>Tutoring Improvement (Deprioritized)</h3>
 <ul>
-  <li>Productize tutoring offer upgrades (pause for now) <span class="status someday">SOMEDAY</span></li>
+  <li>Tutoring improvement upgrades (pause / later) <span class="status someday">SOMEDAY</span></li>
 </ul>
 
 
@@ -243,7 +247,7 @@
   <p class="meta">Created: 2025-12-15</p>
   <ul>
     <li><strong>Focus:</strong> Epoxy pricing tiers (discussion-ready)</li>
-    <li><strong>Definition of Done:</strong> Written Good / Better / Best tiers with rough numbers + scheduled buddy sync</li>
+    <li><strong>Definition of Done:</strong> Written Good/Better/Best tiers with rough numbers + scheduled buddy sync</li>
     <li><strong>Due Date:</strong> 2025-12-18</li>
     <li><strong>Check-In:</strong> 2025-12-19</li>
   </ul>
@@ -256,9 +260,9 @@
 <div class="log-entry">
   <span class="tag">[2025-12-15]</span><br />
   <strong>Type:</strong> SETUP<br />
-  <strong>Topic:</strong> Priorities updated: researcher job + system + AoPS + epoxy (buddy-driven). Tutoring deprioritized.<br />
+  <strong>Topic:</strong> Imported Money-Making master list priorities into Hub. Adjusted task map to match researcher job + travel timeline.<br />
   <strong>Status:</strong> Logged<br />
-  <strong>Notes:</strong> Created CP-002 for sprint + updated tasks to match travel timeline.
+  <strong>Notes:</strong> Money-making list is canonical in Section 8 (below).
 </div>
 <!-- Append new log entries ABOVE this comment -->
 
@@ -268,7 +272,7 @@
   <ul>
     <li>[2025-12-15] Use Render pages as canonical sources of truth</li>
     <li>[2025-12-15] TCAP activated for structured accountability</li>
-    <li>[2025-12-15] Before travel: prioritize job onboarding wins + system adoption</li>
+    <li>[2025-12-15] Worksheet Image/PDF Factory is intentionally paused (assets saved)</li>
   </ul>
 </div>
 
@@ -278,6 +282,7 @@
   <ul>
     <li>This hub is canonical for priorities + tasks + checkpoints.</li>
     <li>Default priority order: Researcher Job → System → AoPS → Epoxy (buddy-driven).</li>
+    <li>Money-making master list is imported in Section 8 (use it when planning revenue strategy).</li>
     <li>When asked to “fetch the hub”: return deltas, top next actions for today, and any overdue checkpoint items.</li>
     <li>Epoxy constraint: Tyler supports planning + accountability; buddy must approve/execute business moves.</li>
     <li>Use TCAP for checkpoint reasoning and end with the next checkpoint.</li>
@@ -286,7 +291,7 @@
 
 
 <h2>7. Machine-Readable Snapshot (JSON)</h2>
-<p class="meta">Keep this synced with the page above. ChatGPT can parse it directly.</p>
+<p class="meta">Keep this synced with the hub sections above. ChatGPT can parse it directly.</p>
 
 <pre>{
   "last_updated": "2025-12-15",
@@ -305,7 +310,7 @@
 
     { "id": "S-1", "area": "System", "title": "Daily bullet journal: Top 3 + time blocks + end-of-day log", "status": "ACTIVE" },
     { "id": "S-2", "area": "System", "title": "Update hub pages daily (2 minutes)", "status": "ACTIVE" },
-    { "id": "S-3", "area": "System", "title": "Weekly Command Center fill-in for Dec 15–18 sprint (Option B)", "status": "WAITING" },
+    { "id": "S-3", "area": "System", "title": "Weekly Command Center fill-in (Option B)", "status": "WAITING" },
 
     { "id": "A-1", "area": "AoPS", "title": "Prep next session (timebox)", "status": "ACTIVE" },
     { "id": "A-2", "area": "AoPS", "title": "Grading/messages (timebox 20 min)", "status": "WAITING" },
@@ -313,9 +318,7 @@
     { "id": "E-1", "area": "Epoxy", "title": "Buddy check-in + propose 20-min sync before travel", "status": "ACTIVE" },
     { "id": "E-2", "area": "Epoxy", "title": "Draft pricing tiers (discussion-ready)", "status": "ACTIVE" },
     { "id": "E-3", "area": "Epoxy", "title": "Draft 1-page quote template", "status": "WAITING" },
-    { "id": "E-4", "area": "Epoxy", "title": "Draft buddy message (Option C)", "status": "WAITING" },
-
-    { "id": "T-1", "area": "Tutoring", "title": "Tutoring improvement upgrades (paused)", "status": "SOMEDAY" }
+    { "id": "E-4", "area": "Epoxy", "title": "Draft buddy message (Option C)", "status": "WAITING" }
   ],
   "checkpoints": [
     {
@@ -336,6 +339,85 @@
     }
   ]
 }</pre>
+
+
+<h2>8. Money-Making Mode — Master To-Do Import</h2>
+<div class="card">
+  <p class="meta"><strong>Context snapshot (read once):</strong> stable, remote, intellectually aligned income with reduced chaos. Short-term = reliable cash flow without burnout. Medium-term = deliberate ramp into data analysis. Visual worksheet/PDF work paused (assets saved).</p>
+</div>
+
+<h3>8.1 Top Priority — ACTIVE & Revenue-Relevant</h3>
+
+<div class="card">
+  <p><strong>MM-1: Premium Math Tutoring Funnel</strong> <span class="status active">ACTIVE</span></p>
+  <p class="meta">Purpose: immediate cash flow while building long-term leverage. Target: $1,500–$3,000/month within weeks.</p>
+  <ul>
+    <li>Lock primary tutoring niche (AoPS homework rescue / AMC 8-10 / Geometry foundations / Gifted acceleration)</li>
+    <li>Define pricing & packages (hourly + 4–6 week bundles)</li>
+    <li>Create 15-minute diagnostic pitch</li>
+    <li>Draft parent-facing sales copy</li>
+    <li>Choose acquisition channels (Wyzant / AoPS families / parent FB groups)</li>
+    <li>Draft referral script for existing students</li>
+  </ul>
+</div>
+
+<div class="card">
+  <p><strong>MM-2: Gradual Ramp into Data Analysis</strong> <span class="status active">ACTIVE</span></p>
+  <p class="meta">Purpose: medium-term transition to stable, well-paid remote role. Target: $65k–$110k/year (6–12 months). Controlled, low-stress ramp.</p>
+  <ul>
+    <li><strong>Phase 1 (Foundations):</strong> refresh SQL; refresh Python for analysis (Pandas + basic plotting); map math background to analytics framing; identify 2–3 industries</li>
+    <li><strong>Phase 2 (Portfolio seeding):</strong> define 3–5 realistic projects; begin Project #1 (quality > speed)</li>
+    <li><strong>Phase 3 (Positioning):</strong> resume toward analyst framing; case-study writeups; LinkedIn positioning; target companies/roles</li>
+  </ul>
+</div>
+
+<h3>8.2 Medium Priority — Important but Not Primary Income</h3>
+
+<div class="card">
+  <p><strong>MM-3: Cindy — Storage / Property-Based Income Support</strong> <span class="status waiting">WAITING</span></p>
+  <ul>
+    <li>Clarify Cindy’s goals and scope</li>
+    <li>Help with pricing research, listing copy, basic contracts, market comparisons</li>
+    <li>Track lessons learned (optional)</li>
+  </ul>
+</div>
+
+<div class="card">
+  <p><strong>MM-4: Light Freelance Math / Curriculum Work</strong> <span class="status someday">SOMEDAY</span></p>
+  <p class="meta">Optional bridge income ($300–$800/month if needed).</p>
+  <ul>
+    <li>Identify low-friction opportunities (solutions, grading, problem banks, editing)</li>
+    <li>Prepare 1-page micro-portfolio</li>
+    <li>Draft outreach emails</li>
+    <li>Pitch selectively (no grinding)</li>
+  </ul>
+</div>
+
+<h3>8.3 Low Priority — Future Leverage (Do Not Rush)</h3>
+
+<div class="card">
+  <p><strong>MM-5: Digital Math Products (Text-First Only)</strong> <span class="status someday">SOMEDAY</span></p>
+  <ul>
+    <li>Identify one narrow product idea</li>
+    <li>Choose text-based format (PDF guide / mini-course)</li>
+    <li>Outline content → write MVP → test</li>
+  </ul>
+</div>
+
+<div class="card">
+  <p><strong>MM-6: Math Membership / Subscription</strong> <span class="status someday">SOMEDAY</span></p>
+  <ul>
+    <li>Define weekly deliverable</li>
+    <li>Pricing tiers + onboarding flow</li>
+    <li>Convert tutoring families → members</li>
+  </ul>
+</div>
+
+<div class="card">
+  <p><strong>MM-PAUSED: Worksheet Image / PDF Factory</strong> <span class="status paused">PAUSED</span></p>
+  <p class="meta">High friction; high cognitive cost; low short-term ROI. Paused, not abandoned.</p>
+</div>
+
 
 <script>
   (function () {
